@@ -1,0 +1,27 @@
+body {
+    background: black;
+}
+.H {
+    color: red;
+}
+button {
+    background: black;
+    border-color: white;
+}
+.A, .U {
+    color: #ff8000;
+}
+.changelog {
+    background: white;
+    color: magenta;
+}
+.choose {
+    background: black;
+    border-color: white;
+    color: white;
+    width: 100px;
+    height: 60px;
+}
+.E, .EU, .F {
+    color: #ffff00;
+}
