@@ -87,40 +87,40 @@ function upgradesDisplay() {
 function upgrade0() {
     return upgrades[0] ? `
 <button class="U" style="background: #c06000">
-升级0：<br>将作业机效率×3<br>花费：10本写好的作业
+升级0：<br>将作业机效率×3<br>花费： 10 本写好的作业
 </button>` : maxHomework.gte(4) ? `
 <button class="U" onmousedown="buyUpgrade(0)">
-升级0：<br>将作业机效率×3<br>花费：10本写好的作业
-</button>` : ""
+升级0：<br>将作业机效率×3<br>花费： 10 本写好的作业
+</button>` : `<div class="A">到达 4 本作业解锁升级</div>`
 }
 
 function upgrade1() {
     return upgrades[1] ? `
 <button class="U" style="background: #c06000">
-升级1：<br>已写完的作业提升作业机效率<br>花费：250本写好的作业
+升级1：<br>已写完的作业提升作业机效率<br>花费： 250 本写好的作业
 </button>` : upgrades[0] ? `
 <button class="U" onmousedown="buyUpgrade(1)">
-升级1：<br>已写完的作业提升作业机效率<br>花费：250本写好的作业
+升级1：<br>已写完的作业提升作业机效率<br>花费： 250 本写好的作业
 </button>` : ""
 }
 
 function upgrade2() {
     return upgrades[2] ? `
 <button class="U" style="background: #c06000">
-升级2：<br>解锁购买最大作业机<br>花费：9,000本写好的作业
+升级2：<br>解锁购买最大作业机<br>花费： 9,000 本写好的作业
 </button>` : upgrades[1] ? `
 <button class="U" onmousedown="buyUpgrade(2)">
-升级2：<br>解锁购买最大作业机<br>花费：9,000本写好的作业
+升级2：<br>解锁购买最大作业机<br>花费： 9,000 本写好的作业
 </button>` : ""
 }
 
 function upgrade3() {
     return upgrades[3] ? `
 <button class="U" style="background: #c06000">
-升级3：<br>解锁试卷<br>花费：180,000本写好的作业
+升级3：<br>解锁试卷<br>花费： 180,000 本写好的作业
 </button>` : upgrades[2] ? `
 <button class="U" onmousedown="buyUpgrade(3)">
-升级3：<br>解锁试卷<br>花费：180,000本写好的作业
+升级3：<br>解锁试卷<br>花费： 180,000 本写好的作业
 </button>` : ""
 }
 
@@ -134,7 +134,7 @@ ${display(examinationSpeedup())}
 <button class="E" onmousedown="examinationReset()">写
 ${display((examinationGain().gte(0) ? examinationGain() : new D(0))
     )}
-张试卷<br>但是重置前面的所有东西<br>要求：1,048,576本写好的作业</button><br>
+张试卷<br>但是重置前面的所有东西<br>要求： 1,048,576 本写好的作业</button><br>
 ${EUDisplay()}
 <br>
 ${finalExamination()}`
@@ -147,30 +147,30 @@ function EUDisplay() {
 function EU0() {
     return EU[0] ? `
 <button class="EU" style="background: #c0c000">
-试卷升级0：<br>重置时保留升级<br>花费：20张写好的试卷
+试卷升级0：<br>重置时保留升级<br>花费： 20 张写好的试卷
 </button>` : maxHomework.gte(33554432) ? `
 <button class="EU" onmousedown="buyEU(0)">
-试卷升级0：<br>重置时保留升级<br>花费：20张写好的试卷
-</button>` : ""
+试卷升级0：<br>重置时保留升级<br>花费： 20 张写好的试卷
+</button>` : `<div class="E">到达 33,554,432 本作业解锁升级</div>`
 }
 
 function EU1() {
     return EU[1] ? `
 <button class="EU" style="background: #c0c000">
-试卷升级1：<br>解锁自动购买最大<br>花费：40张写好的试卷
+试卷升级1：<br>解锁自动购买最大<br>花费： 40 张写好的试卷
 </button>` : EU[0] ? `
 <button class="EU" onmousedown="buyEU(1)">
-试卷升级1：<br>解锁自动购买最大<br>花费：40张写好的试卷
+试卷升级1：<br>解锁自动购买最大<br>花费： 40 张写好的试卷
 </button>` : ""
 }
 
 function EU2() {
     return EU[2] ? `
 <button class="EU" style="background: #c0c000">
-试卷升级2：<br>解锁期末考试<br>花费：1600张写好的试卷
+试卷升级2：<br>解锁期末考试<br>花费： 1600 张写好的试卷
 </button>` : EU[1] ? `
 <button class="EU" onmousedown="buyEU(2)">
-试卷升级2：<br>解锁期末考试<br>花费：1600张写好的试卷
+试卷升级2：<br>解锁期末考试<br>花费： 1600 张写好的试卷
 </button>` : ""
 }
 
