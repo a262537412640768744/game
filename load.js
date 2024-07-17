@@ -5,11 +5,13 @@ function save() {
     localStorage.setItem("max", maxHomework.toString())
     localStorage.setItem("upgrades", JSON.stringify(upgrades))
     localStorage.setItem("examinationPapers", examinationPapers.toString())
+    localStorage.setItem("ERconfirm", JSON.stringify(ERconfirm))
     localStorage.setItem("EU", JSON.stringify(EU))
     localStorage.setItem("auto", JSON.stringify(auto))
     localStorage.setItem("finals", finalExaminations.toString())
     localStorage.setItem("knowledge", knowledge.toString())
     localStorage.setItem("EC", JSON.stringify(EC))
+    localStorage.setItem("ECconfirm", JSON.stringify(ECconfirm))
     localStorage.setItem("currentChallenge", JSON.stringify(currentChallenge))
     setTimeout(save, 0)
 }
@@ -25,11 +27,13 @@ function load() {
     maxHomework = get("max", new D(0), n => new D(n))
     upgrades = get("upgrades", [false, false, false, false], JSON.parse)
     examinationPapers = get("examinationPapers", new D(0), n => new D(n))
+    ERconfirm = get("ERconfirm", true, JSON.parse)
     EU = get("EU", [false, false, false, false, false], JSON.parse)
     auto = get("auto", false, JSON.parse)
     finalExaminations = get("finals", new D(0), n => new D(n))
     knowledge = get("knowledge", new D(0), n => new D(n))
     EC = get("EC", [false, false, false, false], JSON.parse)
+    ERconfirm = get("ECconfirm", true, JSON.parse)
     currentChallenge = get("currentChallenge", 0, JSON.parse)
 }
 
@@ -41,10 +45,12 @@ function reset() {
     maxHomework = new D(0)
     upgrades = [false, false, false, false]
     examinationPapers = new D(0)
+    ERconfirm = true
     EU = [false, false, false, false, false]
     auto = false
     finalExaminations = new D(0)
     knowledge = new D(0)
     EC = [false, false, false, false]
+    ECconfirm = true
     currentChallenge = -1
 }

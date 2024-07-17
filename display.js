@@ -223,7 +223,15 @@ ${currentChallenge == 0 ? (finishHomeworks.gte(1e91) ? "完成挑战" : "退出�
 }
 
 function changelog() {
-    return `
+    return `<button class="settings" onmousedown="fix()">修bug</button>
+<button class="settings" onmousedown="hardReset()">硬重置</button>
+<br>
+<button class="settings" onmousedown="ERconfirm = !ERconfirm">写试卷时确认：
+${ERconfirm ? "是" : "否"}
+</button><button class="settings" onmousedown="ECconfirm = !ECconfirm">进入、退出试卷挑战时确认：
+${ECconfirm ? "是" : "否"}
+</button>
+<br>
 <div class="changelog">更新日志：</div>
 <div class="changelog">
 版本v0.0.0：添加老师、作业、作业机、升级0~2
@@ -264,6 +272,13 @@ EndGame：写完1e100本作业（可以写99,999张试卷）
 版本v0.1.3：添加1个试卷升级和试卷挑战
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 日期：2024/7/16夜晚
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+EndGame：写完1e200本作业（可以写1e10张试卷）
+</div>
+<div class="changelog">
+版本v0.1.4：添加了一些设置功能
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+日期：2024/7/17
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 EndGame：写完1e200本作业（可以写1e10张试卷）
 </div>`

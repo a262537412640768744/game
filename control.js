@@ -9,6 +9,8 @@ let currentChallenge = -1
 let examinationPapers = new D(0)
 let examinationGain = () => finishHomeworks.root(20).sub(1).floor()
 let EC = [false, false, false, false]
+let ECconfirm = true
+let ERconfirm = true
 let EU = [false, false, false, false, false]
 let finalExaminations = new D(0)
 let finishHomeworks = new D(0)
@@ -36,6 +38,24 @@ save()
 
 let choose = 0
 
+function fix() {
+    if (finishHomeworks.lt(0)) {
+        finalExaminations = new D(0)
+    }
+    if (!EU[1] && auto) {
+        auto = false
+    }
+    if (!EU[3] && currentChallenge != -1) {
+        currentChallenge = -1
+    }
+}
+
+function hardReset() {
+    if (confirm("你确定要硬重置吗？")) {
+        reset()
+    }
+}
+
 function buyMachine() {
     if (finishHomeworks.gte(price()) && !(currentChallenge == 0)) {
         finishHomeworks = finishHomeworks.sub(price())
@@ -61,6 +81,7 @@ function buyUpgrade(n) {
 }
 
 function examinationReset() {
+    if (ERconfirm && !confirm("你确定要写试卷？这会重置你之前的进度！")) return
     if (finishHomeworks.gte(1048576)) {
         examinationPapers = examinationPapers.add(examinationGain())
         finishHomeworks = new D(0)
@@ -102,9 +123,15 @@ function clickEC(n) {
     if (currentChallenge == n) {
         if (finishHomeworks.gte(goal)) {
             EC[n] = true
+            currentChallenge = -1
+            return;
         }
+        if (ECconfirm &&
+            !confirm("你确定要退出挑战？你将不会得到任何奖励！")) return
         currentChallenge = -1
-    } else {
+    } else if (currentChallenge == -1) {
+        if (ECconfirm &&
+            !confirm("你确定要进入挑战？请做好准备！")) return
         examinationReset()
         if (n == 0) {
             machines = new D(1)

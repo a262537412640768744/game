@@ -11,7 +11,10 @@ button {
 .A, .U {
     color: #ff8000;
 }
-.changelog {
+.E, .EU, .F, .EC {
+    color: #ffff00;
+}
+.changelog, .settings {
     background: white;
     color: magenta;
 }
@@ -21,7 +24,4 @@ button {
     color: white;
     width: 100px;
     height: 60px;
-}
-.E, .EU, .F, .EC {
-    color: #ffff00;
 }
