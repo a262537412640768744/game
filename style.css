@@ -1,0 +1,37 @@
+body {
+    background: black;
+}
+.H {
+    color: red;
+}
+button {
+    background: black;
+    border-color: white;
+}
+.A, .U {
+    color: #ff8000;
+}
+.E, .EU, .F, .EC {
+    color: #ffff00;
+}
+.S, .SM, .SU {
+    color: #80ff00;
+}
+.D0 {color: #80ff00;}
+.D1 {color: #60c000;}
+.D2 {color: #489000;}
+.D3 {color: #366c00;}
+.G, .GM {
+    color: #00ff00;
+}
+.changelog, .settings {
+    background: white;
+    color: magenta;
+}
+.choose {
+    background: black;
+    border-color: white;
+    color: white;
+    width: 100px;
+    height: 60px;
+}
